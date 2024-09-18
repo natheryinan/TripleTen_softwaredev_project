@@ -30,12 +30,13 @@ st.plotly_chart(scatter_plot)
 show_details = st.checkbox("Show Details")
 if show_details:
     st.subheader("Data Overview")
-    st.table(df.dtypes)
+    st.write(df.dtypes)
     df['price'] = pd.to_numeric(df['price'], errors='coerce')
+    df['odometer'] = pd.to_numeric(df['odometer'], errors='coerce')
     df = df.dropna(subset=['price'])
     # Explicitly convert to np.float64
     df['price'] = df['price'].astype(np.float64)
     df['model_year'] = df['model_year'].astype(str)  # Convert any mixed type column to string
     df['cylinders'] = df['model_year'].astype(str)
     df['is_4wd'] = df['is_4wd'].astype(str)
-    st.table(df.describe(include='all'))  # Show a summary of the data
+    st.write(df.describe(include='all'))  # Show a summary of the data
