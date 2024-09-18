@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df=pd.read_csv('C:/Users/yangy/TripleTen_softwaredev_project/vehicles_us.csv')
+df=pd.read_csv('C:/Users/yangy/TripleTen_softwaredev_project/vehicles_us_utf8.csv',encoding='utf-8-sig')
+
 
 
 # Set the title of the app
