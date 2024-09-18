@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df=pd.read_csv('vehicles_us_utf8.csv',encoding='utf-8')
+df=pd.read_csv('vehicles_us_utf8.csv',encoding='utf-8-sig')
 
 
 
