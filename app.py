@@ -2,11 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
+import pyarrow as pa
 
 df=pd.read_csv('vehicles_us_utf8.csv',encoding='utf-8-sig')
-#st.write(df.dtypes)
-df['price'] = pd.to_numeric(df['price'], errors='coerce')
-df['price'].fillna(df['price'].mean())
+
 
 
 # Set the title of the app
@@ -31,5 +30,12 @@ st.plotly_chart(scatter_plot)
 show_details = st.checkbox("Show Details")
 if show_details:
     st.subheader("Data Overview")
+    st.write(df.dtypes)
+    df['price'] = pd.to_numeric(df['price'], errors='coerce')
+    df = df.dropna(subset=['price'])
+    # Explicitly convert to np.float64
     df['price'] = df['price'].astype(np.float64)
+    df['model_year'] = df['model_year'].astype(str)  # Convert any mixed type column to string
+    df['cylinders'] = df['model_year'].astype(str)
+    df['is_4wd'] = df['is_4wd'].astype(str)
     st.write(df.describe())  # Show a summary of the data
