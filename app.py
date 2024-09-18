@@ -38,4 +38,4 @@ if show_details:
     df['model_year'] = df['model_year'].astype(str)  # Convert any mixed type column to string
     df['cylinders'] = df['model_year'].astype(str)
     df['is_4wd'] = df['is_4wd'].astype(str)
-    st.write(df.describe().astype("str"))  # Show a summary of the data
+    st.write(df.describe(include='all').astype("str"))  # Show a summary of the data
