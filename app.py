@@ -30,4 +30,5 @@ st.plotly_chart(scatter_plot)
 show_details = st.checkbox("Show Details")
 if show_details:
     st.subheader("Data Overview")
+    df['price'] = df['price'].astype(np.float64)
     st.write(df.describe())  # Show a summary of the data
