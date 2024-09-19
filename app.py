@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
-import pyarrow as pa
 from io import StringIO
 
 
@@ -32,7 +31,6 @@ scatter_plot = px.scatter(df, x='odometer', y='price',
                            hover_data=['model_year', 'model'])
 st.plotly_chart(scatter_plot)
 
-st.table(df.head())
 
 # Checkbox for showing additional details
 show_details = st.checkbox("Show Details")
@@ -47,8 +45,9 @@ if show_details:
     df['model_year'] = df['model_year'].astype(str)  # Convert any mixed type column to string
     df['cylinders'] = df['model_year'].astype(str)
     df['is_4wd'] = df['is_4wd'].astype(str)
-    #summary=df.describe(include='all').fillna("").astype("str")
-    summary=df['price'].describe()
-    st.table(summary)
+    st.dataframe(df)
+    st.dataframe(df.describe())
+    #summary=df['price'].describe()
+    #st.table(summary)
    
 
