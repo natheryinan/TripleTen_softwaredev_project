@@ -8,9 +8,9 @@ from io import StringIO
 df=pd.read_csv('vehicles_us_utf8.csv',encoding='utf-8-sig')
 
 
-buffer = StringIO()
-df.info(buf=buffer)
-s = buffer.getvalue()
+#buffer = StringIO()
+#df.info(buf=buffer)
+#s = buffer.getvalue()
 
 
 # Set the title of the app
@@ -36,7 +36,7 @@ st.plotly_chart(scatter_plot)
 show_details = st.checkbox("Show Details")
 if show_details:
     st.subheader("Data Overview")
-    st.text(s)
+    #st.text(s)
     df['price'] = pd.to_numeric(df['price'], errors='coerce')
     df['odometer'] = pd.to_numeric(df['odometer'], errors='coerce')
     df = df.dropna(subset=['price'])
