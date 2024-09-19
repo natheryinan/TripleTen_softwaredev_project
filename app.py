@@ -45,4 +45,4 @@ if show_details:
     df['cylinders'] = df['model_year'].astype(str)
     df['is_4wd'] = df['is_4wd'].astype(str)
     summary = df.describe()
-    st.table(summary)  # Show a summary of the data
+    st.dataframe(summary)  # Show a summary of the data
