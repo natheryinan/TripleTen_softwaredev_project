@@ -8,6 +8,7 @@ from io import StringIO
 
 df=pd.read_csv('vehicles_us_utf8.csv',encoding='utf-8-sig')
 
+
 buffer = StringIO()
 df.info(buf=buffer)
 s = buffer.getvalue()
@@ -30,6 +31,8 @@ scatter_plot = px.scatter(df, x='odometer', y='price',
                            title='Price vs. Mileage', 
                            hover_data=['model_year', 'model'])
 st.plotly_chart(scatter_plot)
+
+st.table(df.head())
 
 # Checkbox for showing additional details
 show_details = st.checkbox("Show Details")
