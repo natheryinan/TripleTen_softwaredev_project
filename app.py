@@ -46,5 +46,6 @@ if show_details:
     df['is_4wd'] = df['is_4wd'].astype(str)
     #summary=df.describe(include='all').fillna("").astype("str")
     summary=df['price'].describe()
-    st.write(summary)
+    st.table(summary)
+   
 
