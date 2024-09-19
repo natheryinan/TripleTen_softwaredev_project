@@ -44,5 +44,6 @@ if show_details:
     df['model_year'] = df['model_year'].astype(str)  # Convert any mixed type column to string
     df['cylinders'] = df['model_year'].astype(str)
     df['is_4wd'] = df['is_4wd'].astype(str)
-    summary = df.describe()
-    st.dataframe(summary)  # Show a summary of the data
+    summary=df.describe(include='all').fillna("").astype("str")
+    st.write(summary)
+
