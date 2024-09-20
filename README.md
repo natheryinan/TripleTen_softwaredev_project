@@ -35,7 +35,7 @@ To run this project on your local machine, follow these steps:
 2. **Set up a virtual environment**:
    python -m venv venv
    venv\Scripts\activate
-3. Install required libraries
+3. **Install required libraries**
    pip install pandas scipy streamlit altair plotly numpy pyarrow
    pip install -r requirements.txt
 4. **Run the application**
