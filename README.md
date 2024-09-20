@@ -29,7 +29,6 @@ This project is a web application designed to analyze a car advertisement datase
 To run this project on your local machine, follow these steps:
 
 1. **Clone the Repository**:
-   ```bash
    git clone https://github.com/natheryinan/TripleTen_softwaredev_project
    cd TripleTen_softwaredev_project
 2. **Set up a virtual environment**:  
