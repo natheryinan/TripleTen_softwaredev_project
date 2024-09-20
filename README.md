@@ -8,9 +8,15 @@ This project is a web application designed to analyze a car advertisement datase
 
 ## Libraries Used
 
-- **Streamlit**: For creating the web app interface.
-- **Pandas**: For data manipulation and analysis.
-- **Plotly Express**: For creating interactive plots and visualizations.
+- **Streamlit** 
+- **Pandas**
+- **Plotly Express**
+- **scipy**
+- **altair**
+- **numpy**
+- **pyarrow**
+
+
 
 ## Features
 
@@ -26,6 +32,17 @@ To run this project on your local machine, follow these steps:
    ```bash
    git clone https://github.com/natheryinan/TripleTen_softwaredev_project
    cd TripleTen_softwaredev_project
+2. **Set up a virtual environment**:
+   python -m venv venv
+   venv\Scripts\activate
+3. Install required libraries
+   pip install pandas scipy streamlit altair plotly numpy pyarrow
+   pip install -r requirements.txt
+4. **Run the application**
+   streamlit run app.py
+5. **Access the application**
+   http://localhost:10000
+   
 
 ## Render App Link
 
